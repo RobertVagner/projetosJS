@@ -1,0 +1,68 @@
+<html>
+    <meta charset="UTF-8"/>
+        <title>Cálculo de Distância</title>
+        <style type="text/css">
+            *{
+                font-family: Arial, Verdana, sans-serif;
+                color: #665544;}
+            input {
+                border-bottom: 1px dotted #dcdcdc;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                padding: 5px;
+                width: 280px;
+                margin-bottom: 20px;}
+            
+            input#Calcular {
+                color: #ffffff;
+                background-color: #665544;
+                border: none;
+                border-radius: 5px;
+                width: 80px;}
+            input#Calcular:hover {
+                color: #665544;
+                background-color: #efefef;}
+            form {
+                width: 350px;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: left;}
+            legend {
+                background-color: #efefef;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 10px 20px;
+                text-align: center;
+                text-transform: uppercase;}
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <legend>Cálculo de distância</legend><br>
+            Informe X1: <input type="text" id="x1"> <br>
+            Informe Y1: <input type="text" id="y1"> <br>
+            Informe X2: <input type="text" id="x2"> <br>
+            Informe Y2: <input type="text" id="y2"> <br>
+
+            Distância: <input type="text" id="dist"> <br>
+            <input type="button" value="Calcular" onclick="Calcular()">
+        </form>
+        <script>
+            function Calcular()
+            {
+                var distancia, x1, x2 , y1, y2;
+                distancia = document.getElementById("dist").value;
+                x1 = document.getElementById("x1").value;
+                y1 = document.getElementById("y1").value;
+                x2 = document.getElementById("x2").value;
+                y2 = document.getElementById("y2").value;
+
+                distancia = Math.sqrt((Math.pow(x2-x1,2))+(Math.pow(y2-y1,2)))
+                document.getElementById("dist").value = distancia.toFixed(4);
+            }
+        </script>
+    </body>
+</html>

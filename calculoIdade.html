@@ -1,0 +1,72 @@
+<html>
+    <meta charset="UTF-8"/>
+        <title>Cálculo de Idade</title>
+        <style type="text/css">
+            *{
+                font-family: Arial, Verdana, sans-serif;
+                color: #665544;}
+            input {
+                border-bottom: 1px dotted #dcdcdc;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                padding: 5px;
+                width: 280px;
+                margin-bottom: 20px;}
+            
+            input#Calcular {
+                color: #ffffff;
+                background-color: #665544;
+                border: none;
+                border-radius: 5px;
+                width: 80px;}
+            input#Calcular:hover {
+                color: #665544;
+                background-color: #efefef;}
+            form {
+                width: 350px;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: left;}
+            legend {
+                background-color: #efefef;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 10px 20px;
+                text-align: center;
+                text-transform: uppercase;}
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <legend>Cálculo de Idade</legend><br>
+            Idade em dias: <input type="text" id="idDias"> <br>
+            <input type="button" value="Calcular" onclick="Calcular()"><br>
+            Ano(s): <input type="text" id="ano"> <br>
+            Mês(es): <input type="text" id="mes"> <br>
+            Dia(s): <input type="text" id="dia"> <br>
+        </form>
+        <script>
+            function Calcular()
+            {
+                var anos, resto, meses, dias, idadeDias;
+                anos = document.getElementById("ano").value;
+                dias = document.getElementById("dia").value;
+                meses = document.getElementById("mes").value;
+                idadeDias = document.getElementById("idDias").value;
+
+                anos = idadeDias / 365;
+                resto = idadeDias % 365;
+                meses = resto / 30;
+                dias = resto % 30;
+
+                document.getElementById("ano").value = anos.toFixed(0);
+                document.getElementById("mes").value = meses.toFixed(0);
+                document.getElementById("dia").value = dias.toFixed(0);
+
+            }
+        </script>
+    </body>
+</html>

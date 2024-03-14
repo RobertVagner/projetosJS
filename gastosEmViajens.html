@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Gastos em viagem</title>
+        <style type="text/css">
+            *{
+                font-family: Arial, Verdana, sans-serif;
+                color: #665544;}
+            input {
+                border-bottom: 1px dotted #dcdcdc;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                padding: 5px;
+                width: 280px;
+                margin-bottom: 20px;}
+            
+            input#Calcular {
+                color: #ffffff;
+                background-color: #665544;
+                border: none;
+                border-radius: 5px;
+                width: 80px;}
+            input#Calcular:hover {
+                color: #665544;
+                background-color: #efefef;}
+            form {
+                width: 350px;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: left;}
+            legend {
+                background-color: #efefef;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 10px 20px;
+                text-align: center;
+                text-transform: uppercase;}
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <legend>Gastos de Viagem</legend><br>
+            Tempo da Viagem (h): <input type="text" id="tv"> <br>
+            Velocidade Média (Km/h): <input type="text" id="vm"> <br>
+
+            <input type="button" value="Calcular" onclick="Calcular()"><br>
+            Quantos Litros serão necessário: <input type="text" id="result"> <br>
+            Valor Gasto (R$): <input type="text" id="vg"> <br>
+
+        </form>
+        <script>
+            function Calcular()
+            {
+                var resultado, velocidadeMedia, tempoDaViagem, valorGasto;
+                tempoDaViagem = document.getElementById("tv").value;
+                velocidadeMedia = document.getElementById("vm").value;
+
+                resultado = (tempoDaViagem * velocidadeMedia) / 12;
+                document.getElementById("result").value = resultado.toFixed(0);
+                valorGasto = resultado * 6;
+                document.getElementById("vg").value = valorGasto.toFixed(2);
+            }
+        </script>
+    </body>
+</html>
